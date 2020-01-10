@@ -37,7 +37,7 @@ class PongGame(Widget):
         if (self.ball.y < self.y) or (self.ball.top > self.top):
             self.ball.velocity_y *= -1
 
-        if self.ball.x < self.x:
+        if self.ball.x + self.ball.width < self.x:
             self.player2.score += 1
             self.serve_ball(vel=(4, 0))
         if self.ball.x > self.width:
@@ -73,4 +73,3 @@ class PongApp(App):
 
 if __name__ == '__main__':
     PongApp().run()
-
